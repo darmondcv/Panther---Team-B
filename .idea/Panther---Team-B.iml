@@ -19,5 +19,8 @@
     <orderEntry type="library" name="Maven: org.hibernate.orm:hibernate-core:6.6.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:6.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:6.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:6.4.1" level="project" />
   </component>
 </module>

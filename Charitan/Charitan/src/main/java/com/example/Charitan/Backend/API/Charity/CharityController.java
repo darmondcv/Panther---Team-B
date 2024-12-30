@@ -1,5 +1,6 @@
 package com.example.Charitan.Backend.API.Charity;
 
+import com.example.Charitan.Backend.DTO.CharityRegistrationRequest;
 import com.example.Charitan.Backend.DataModel.Charity;
 import com.example.Charitan.Backend.API.Charity.CharityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ public class CharityController {
 
     //Endpoint register charity
     @PostMapping("/register")
-    public ResponseEntity<?> registerCharity(@RequestBody Charity charity){
+    public ResponseEntity<?> registerCharity(@RequestBody CharityRegistrationRequest request){
         try {
-            Charity savedCharity = charityService.registerCharity(charity);
+            Charity savedCharity = charityService.registerCharity(request);
             return ResponseEntity.ok(savedCharity);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

@@ -3,6 +3,7 @@ package com.example.Charitan.Backend.API.Donor;
 import com.example.Charitan.Backend.DataModel.Donor;
 import com.example.Charitan.Backend.API.Donor.DonorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,9 @@ public class DonorService {
 
     @Autowired
     private DonorRepository donorRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     //Register new Donor
     public Donor registerDonor (Donor donor){
@@ -29,6 +33,8 @@ public class DonorService {
                 && !donor.getDonorType().equals("ORGANIZATION")) {
             throw new IllegalArgumentException("Invalid donorType. Allowed values are 'INDIVIDUAL' or 'ORGANIZATION'.");
         }
+
+        donor.setPassword(passwordEncoder.encode(donor.getPassword()));
 
         return donorRepository.save(donor);
     }
