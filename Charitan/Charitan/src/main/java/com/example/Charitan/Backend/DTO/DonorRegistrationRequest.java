@@ -11,6 +11,15 @@ public class DonorRegistrationRequest {
     private String avatar;
     private String name;
     private String donorType;
+    private String introductionVideo;
+
+    public String getIntroductionVideo() {
+        return introductionVideo;
+    }
+
+    public void setIntroductionVideo(String introductionVideo) {
+        this.introductionVideo = introductionVideo;
+    }
 
     public String getEmail() {
         return email;

@@ -44,6 +44,50 @@ public class Charity {
     @Column(name = "updatedAt")
     private LocalDateTime updatedAt;
 
+    @Column(name = "introduction_video")
+    private String introductionVideo;
+
+    @Column(name = "email_verified", nullable = false)
+    private Boolean emailVerified = false;
+
+    @Column (name = "organization_type")
+    private String organizationType;
+
+    @Column (name = "address")
+    private String address;
+
+    public String getIntroductionVideo() {
+        return introductionVideo;
+    }
+
+    public void setIntroductionVideo(String introductionVideo) {
+        this.introductionVideo = introductionVideo;
+    }
+
+    public Boolean getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(Boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public String getOrganizationType() {
+        return organizationType;
+    }
+
+    public void setOrganizationType(String organizationType) {
+        this.organizationType = organizationType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Charity() {
     }
 

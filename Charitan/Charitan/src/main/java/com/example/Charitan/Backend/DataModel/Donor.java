@@ -59,6 +59,28 @@ public class Donor {
     @Column(name = "donor_type")
     private String donorType;
 
+    @Column(name = "introduction_video")
+    private String introductionVideo;
+
+    @Column(name = "email_verified", nullable = false)
+    private Boolean emailVerified = false;
+
+    public String getIntroductionVideo() {
+        return introductionVideo;
+    }
+
+    public void setIntroductionVideo(String introductionVideo) {
+        this.introductionVideo = introductionVideo;
+    }
+
+    public Boolean getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(Boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
     //Constructor
     public Donor(){}
 

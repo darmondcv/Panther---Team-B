@@ -12,6 +12,33 @@ public class CharityRegistrationRequest {
     private String password;
     private String avatar;
     private String country;
+    private String introductionVideo;
+    private String organizationType;
+    private String address;
+
+    public String getIntroductionVideo() {
+        return introductionVideo;
+    }
+
+    public void setIntroductionVideo(String introductionVideo) {
+        this.introductionVideo = introductionVideo;
+    }
+
+    public String getOrganizationType() {
+        return organizationType;
+    }
+
+    public void setOrganizationType(String organizationType) {
+        this.organizationType = organizationType;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getOrganizationName() {
         return organizationName;

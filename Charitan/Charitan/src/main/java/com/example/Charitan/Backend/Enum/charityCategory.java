@@ -1,11 +1,11 @@
 package com.example.Charitan.Backend.Enum;
 
 public enum charityCategory {
-    FOOD,
-    HEALTH,
-    EDUCATION,
-    ENVIRONMENT,
-    RELIGION,
-    HUMANITARIAN,
-    HOUSING
+    Food,
+    Health,
+    Education,
+    Environment,
+    Religion,
+    Humanitarian,
+    Housing
 }
