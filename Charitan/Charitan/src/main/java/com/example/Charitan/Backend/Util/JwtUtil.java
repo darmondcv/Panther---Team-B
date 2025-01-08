@@ -1,11 +1,15 @@
 package com.example.Charitan.Backend.Util;
 
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.Claims;
+import org.springframework.stereotype.Component;
+
 
 import java.util.Date;
 
+@Component
 public class JwtUtil {
     private static final String SECRET_KEY = "EEET2582ArchitectureCharitanMasterSecureKey123!";
     private static final long EXPIRATION_TIME = 24*60*60*1000;
@@ -22,12 +26,17 @@ public class JwtUtil {
 
     // validate token and get the email
     public static String validateToken (String token) {
-        Claims claims = Jwts.parser()
-                .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(token)
-                .getBody();
+        try {
+            Claims claims = Jwts.parserBuilder()
+                    .setSigningKey(SECRET_KEY.getBytes())
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody();
 
-        return claims.getSubject();
+            return claims.getSubject();
+        } catch (JwtException | IllegalArgumentException e){
+            throw new RuntimeException("Invalid or expired token " + e.getMessage());
+        }
     }
 
 }
