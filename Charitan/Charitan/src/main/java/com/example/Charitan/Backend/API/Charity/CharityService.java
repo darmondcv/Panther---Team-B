@@ -64,7 +64,7 @@ public class CharityService {
         // generate and send verification email
         String token = JwtUtil.generateToken(charity.getEmail());
         String verificationLink = "http://localhost:8080/api/auth/verify-email?token=" + token;
-        String emailContent =  "Click the link to verify your email" + verificationLink;
+        String emailContent =  "Click the link to verify your email: " + verificationLink;
         emailService.sendEmail(charity.getEmail(), "Email verification", emailContent);
 
         return charity;
